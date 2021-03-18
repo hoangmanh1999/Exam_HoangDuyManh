@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        db = AppDatabase.getAppDatabase(this);
         edUsername = findViewById(R.id.edUsername);
         edEmail = findViewById(R.id.edEmail);
         edPhone = findViewById(R.id.edPhone);
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if(v== btnSearch){
             goSearch();
+        }
+        else{
+            return;
         }
     }
 
